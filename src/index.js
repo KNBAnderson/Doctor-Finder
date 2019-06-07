@@ -1,7 +1,10 @@
-import {greeting} from './functions';
+import {Doctor, DoctorList} from './doctor';
 import $ from 'jquery';
 import './styles.css';
 
+
 $(document).ready(function(){
-  $('#jsOutput').text(greeting());
+  console.log('hello');
+  let list = new DoctorList();
+  list.populateDoctors();
 });
