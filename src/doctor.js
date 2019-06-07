@@ -27,7 +27,7 @@ export class DoctorList {
   getDoctors() {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=or-portland&sort=full-name-asc&user_key=${process.env.exports.apiKey}`;
+      let url = this.apiUrl;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);

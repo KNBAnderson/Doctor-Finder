@@ -4,7 +4,19 @@ import './styles.css';
 
 
 $(document).ready(function(){
-  console.log('hello');
   let list = new DoctorList();
-  list.populateDoctors();
+  $('form').submit(e => {
+    e.preventDefault();
+    let searchArr =[];
+    if ($('#name').val()) {
+      let name = '&name='+$('#name').val();
+      searchArr.push(name);
+    }
+    if ($('#symptom').val()) {
+      let symptom = '&query='+$('#symptom').val();
+      searchArr.push(symptom);
+    }
+    list.getUrl(searchArr);
+    list.populateDoctors();
+  })
 });
