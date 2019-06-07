@@ -4,8 +4,8 @@ import './styles.css';
 
 
 $(document).ready(function(){
-  let list = new DoctorList();
   $('form').submit(e => {
+    let list = new DoctorList();
     e.preventDefault();
     let searchArr =[];
     if ($('#name').val()) {
@@ -21,9 +21,9 @@ $(document).ready(function(){
     let promise = new Promise(function(resolve, reject) {
       list.populateDoctors();
     });
-
     setTimeout(() => {
       list.allDoctors.forEach(doctor => {
+        console.log("here", doctor)
         $('#results').append(`<li>${doctor.firstName} ${doctor.lastName}</li>`);
       });
     }, 2000)
