@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="jestTest environment">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Doctor Finder</title>
   </head>
-  <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-  <output id="jsOutput"></output>
+  <body class="row">
+    <h1>Find a doctor in Portland</h1>
+    <form class="col-4">
+      <h3>Search for a doctor with these queries</h3>
+      <label for="name">Search by name:</label>
+      <input id="name" type="text"><br>
+      <label for="symptom">Search by symptom:</label>
+      <input id="symptom" type="text"><br>
+      <label for="specialty">Search by specialty:</label>
+      <input id="specialty" type="text"><br>
+      <label for="zipcode">Search by zipcode:</label>
+      <input id="zipcode" type="text"><br>
+      <button type="submit" class="btn btn-danger" id="submit">Search</button>
+    </form>
+    <div class="col-8" id="result"></div>
   </body>
 </html>

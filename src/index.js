@@ -1,4 +1,4 @@
-import {Doctor, DoctorList} from './doctor';
+import {DoctorList} from './doctor';
 import $ from 'jquery';
 import './styles.css';
 
