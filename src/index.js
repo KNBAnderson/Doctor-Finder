@@ -17,6 +17,15 @@ $(document).ready(function(){
       searchArr.push(symptom);
     }
     list.getUrl(searchArr);
-    list.populateDoctors();
-  })
+
+    let promise = new Promise(function(resolve, reject) {
+      list.populateDoctors();
+    });
+
+    setTimeout(() => {
+      list.allDoctors.forEach(doctor => {
+        $('#results').append(`<li>${doctor.firstName} ${doctor.lastName}</li>`);
+      });
+    }, 2000)
+  }); 
 });

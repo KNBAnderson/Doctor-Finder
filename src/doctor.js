@@ -25,9 +25,10 @@ export class DoctorList {
   }
 
   getDoctors() {
+    let that = this;
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      let url = this.apiUrl;
+      let url = that.apiUrl;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
@@ -60,7 +61,6 @@ export class DoctorList {
         doctor.specialties.forEach(specialty => {
           entry.specialties.push(specialty.name);
         });
-        console.log(entry);
         this.allDoctors.push(entry);
       });
     });
