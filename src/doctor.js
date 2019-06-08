@@ -17,7 +17,7 @@ export class DoctorList {
   }
 
   getUrl(queryParameters) {
-    let url = "https://api.betterdoctor.com/2016-03-01/doctors?location=or-portland&sort=full-name-asc";
+    let url = "https://api.betterdoctor.com/2016-03-01/doctors?location=or-portland&sort=full-name-asc&limit=200";
     for (let i = 0; i < queryParameters.length; i++) {
       url += queryParameters[i];
     }
@@ -52,7 +52,7 @@ export class DoctorList {
         entry.imageUrl = doctor.profile.image_url;
         doctor.practices.forEach(address => {
           if (address.visit_address.city === "Portland") {
-            entry.address = (address.visit_address.name + '\n' + address.visit_address.street + '\nPortland, OR \n' + address.visit_address.zip);
+            entry.address = (address.name + '\n' + address.visit_address.street + '\nPortland, OR \n' + address.visit_address.zip);
             entry.newPatientBool = address.accepts_new_patients;
             entry.phoneNumber = address.phones[0].number;
           }
